@@ -49,7 +49,7 @@ class LoginFragment: Fragment(R.layout.fragment_login) {
                             requireActivity().showToast("Kullanici Bulunamadi")
                         }
                         is LoginState.Success->{
-                            findNavController().navigate(R.id.action_loginFragment_to_newsFragment)
+                            findNavController().navigate(R.id.action_loginFragment_to_interLayerFragment)
                             requireActivity().showToast("Hosgeldiniz ${it.user.name}")
 
                         }

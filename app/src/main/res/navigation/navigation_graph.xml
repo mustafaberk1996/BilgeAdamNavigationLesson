@@ -10,8 +10,8 @@
         android:name="com.example.navigationlesson.ui.login.LoginFragment"
         android:label="LoginFragment" >
         <action
-            android:id="@+id/action_loginFragment_to_newsFragment"
-            app:destination="@id/newsFragment" />
+            android:id="@+id/action_loginFragment_to_interLayerFragment"
+            app:destination="@id/interLayerFragment" />
     </fragment>
     <fragment
         android:id="@+id/newsFragment"
@@ -20,7 +20,9 @@
         tools:layout="@layout/fragment_news" >
         <action
             android:id="@+id/action_newsFragment_to_newsDetailFragment"
-            app:destination="@id/newsDetailFragment" />
+            app:destination="@id/newsDetailFragment"
+            app:enterAnim="@anim/enter_from_detail_right"
+            app:exitAnim="@anim/exit_from_detail_left"/>
         <action
             android:id="@+id/action_newsFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
@@ -34,4 +36,29 @@
             android:id="@+id/action_newsDetailFragment_to_newsFragment"
             app:destination="@id/newsFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/addAuthorFragment"
+        android:name="com.example.navigationlesson.ui.addAuthor.AddAuthorFragment"
+        android:label="fragment_add_author"
+        tools:layout="@layout/fragment_add_author" />
+    <fragment
+        android:id="@+id/interLayerFragment"
+        android:name="com.example.navigationlesson.ui.interlayer.InterLayerFragment"
+        android:label="fragment_inter_layer"
+        tools:layout="@layout/fragment_inter_layer" >
+        <action
+            android:id="@+id/action_interLayerFragment_to_addAuthorFragment"
+            app:destination="@id/addAuthorFragment" />
+        <action
+            android:id="@+id/action_interLayerFragment_to_newsFragment"
+            app:destination="@id/newsFragment" />
+        <action
+            android:id="@+id/action_interLayerFragment_to_addBookFragment"
+            app:destination="@id/addBookFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addBookFragment"
+        android:name="com.example.navigationlesson.ui.addBook.AddBookFragment"
+        android:label="fragment_add_book"
+        tools:layout="@layout/fragment_add_book" />
 </navigation>

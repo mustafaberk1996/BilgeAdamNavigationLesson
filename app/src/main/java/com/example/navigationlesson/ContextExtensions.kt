@@ -1,5 +1,6 @@
 package com.example.navigationlesson
 
+import android.app.AlertDialog
 import android.content.Context
 import android.view.View
 import android.widget.Toast
@@ -11,5 +12,9 @@ fun Context.showToast(message:String){
 
 fun Context.showSnackBar(view: View, message:String){
     Snackbar.make(view, message, Snackbar.LENGTH_LONG).show()
+}
+
+fun Context.showAlert(title:String,message:String){
+    AlertDialog.Builder(this).setTitle(title).setMessage(message).create().show()
 }
 
